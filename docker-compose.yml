@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - /Users/isabelarvelo/Desktop/vanderbilt/fall_24/nosql/FinalProject/mongo-data:/data/db
+    command: mongod --bind_ip_all
+    networks:
+      - app-network
+
+  python:
+    build: .
+    ports:
+      - "5001:5000"  # Flask port
+      - "8888:8888"  # Jupyter port
+    volumes:
+      - /Users/isabelarvelo/Desktop/vanderbilt/fall_24/nosql/FinalProject:/ds5760/python
+    working_dir: /ds5760/python
+    env_file: .env  # Use .env file for environment variables
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/
+      - PYTHONUNBUFFERED=1
+      - JUPYTER_TOKEN=your_secret_token
+    command: python -m jupyter notebook --no-browser --allow-root --ip=0.0.0.0 --NotebookApp.token='your_secret_token'
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
