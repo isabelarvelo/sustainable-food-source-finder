@@ -4,8 +4,9 @@ def show_about_page():
     st.title("About Sustainable Food Finder")
     
     st.write("""
-    Welcome to Sustainable Food Finder! This application helps you discover local, sustainable food sources 
-    and understand seasonal eating patterns to make more environmentally conscious food choices.
+    Welcome to Sustainable Food Finder! My name is Isabel Arvelo and I am a foodie that is passionate about sustainable food 
+    systems and mindful consumption. I built this application to help you discover local, sustainable food sources 
+    and understand seasonal eating patterns to make more food choices you can make feel good about! 
     """)
     
     # Benefits Section
@@ -74,16 +75,27 @@ def show_about_page():
     st.header("Resources")
     
     st.markdown("""
-    ### Featured Partners
+    ### Featured Companies
     - [Misfits Market](https://www.misfitsmarket.com/): Subscription-based grocery delivery that sources sustainably with a focus on reducing food waste
     - [Too Good To Go](https://toogoodtogo.com/): Saves surplus food from restaurants and stores     
     
     ### Data Sources
     - [USDA Local Food Directory](https://www.usdalocalfoodportal.com/)
     - [Seasonal Food Guide](https://www.seasonalfoodguide.org/)
-    - [Fruits & Veggies](https://fruitsandveggies.org/stories/whats-in-season-all-year/)
+    - [Foundation for Fresh Produce](https://fruitsandveggies.org/stories/whats-in-season-all-year/)
     - [Harvard Nutrition Source](https://nutritionsource.hsph.harvard.edu/2015/06/17/5-tips-for-sustainable-eating/)
     """)
+
+    st.header("Restaurant Recommendations")
+    
+    st.markdown("""
+    ### Nashville, TN           
+    - [Avo](https://www.eatavo.com/): Midtown
+    - [Two Hands](https://www.twohandshospitality.com/location/two-hands-nashville/):  The Gulch    
+    - [Miel](https://www.mielrestaurant.com/): West Nashville              
+    """
+)
+    
     
     # Methodology Section
     st.header("Methodology")

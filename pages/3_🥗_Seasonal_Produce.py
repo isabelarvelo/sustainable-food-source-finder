@@ -4,15 +4,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from utils import (
-    init_connection, 
-    create_map, 
-    get_food_sources,
-    query_by_location,
-    query_by_radius,
-    query_by_products_and_location,
-    query_seasonal_produce,
-    query_location_density, 
-    
+    init_connection    
 )
 
 st.title("Seasonal Produce Explorer")
@@ -83,7 +75,6 @@ if search_type == "Seasons":
             st.warning("No produce found for selected seasons.")
 
 else:  # Specific Produce search
-    # Get all produce names for autocomplete
     client = init_connection()
     db = client.food_database
     collection = db.seasonal_foods

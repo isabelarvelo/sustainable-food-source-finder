@@ -3,16 +3,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from utils import (
-    init_connection, 
-    create_map, 
-    get_food_sources,
-    query_by_location,
-    query_by_radius,
-    query_by_products_and_location,
-    query_seasonal_produce,
-    query_location_density
-)
+
 import streamlit as st
 import requests
 import pandas as pd

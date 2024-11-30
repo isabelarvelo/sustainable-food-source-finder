@@ -6,11 +6,9 @@ sys.path.append(str(Path(__file__).parent.parent))
 from utils import (
     init_connection, 
     create_map, 
-    get_food_sources,
     query_by_location,
     query_by_radius,
     query_by_products_and_location,
-    query_seasonal_produce,
     query_location_density, 
     
 )
@@ -183,7 +181,7 @@ def main():
             fig = create_map(results)
             st.plotly_chart(fig, use_container_width=True)
             
-            # Display detailed results
+            # Display results
             for item in results:
                 with st.expander(f"{item['listing_name']} ({item['location']['city']}, {item['location']['state']})"):
                     col1, col2 = st.columns(2)
