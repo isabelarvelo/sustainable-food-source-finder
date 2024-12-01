@@ -1,4 +1,4 @@
-# Sustainble Food Source Finder
+# Sustainable Food Source Finder
 
 ## Structure of Repo
 * .streamlit
@@ -40,9 +40,6 @@ USDA_API_KEY=Your_API_Key
 
 Open a terminal in the root directory of the project and run the following commands:
 
-```
-docker-compose build --no-cache
-```
 
 ```
 docker-compose up

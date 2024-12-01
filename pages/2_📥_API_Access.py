@@ -130,8 +130,9 @@ def main():
                         )
             
             # Add in italics note about results
-            st.write("*If there are no results for a zip code query, try using the zip code and radius option. If the results for a state abbreviation don't match what you would expect, there are some states where the abbrebation does not gather results for the corresponding state from the API (eg. MA, VA, LA, AR). In this case, enter the fill state name. ")
-            st.write("* If you get a 'Read timed out' error message, try getting a new API key.")
+            st.write("*If there are no results for a zip code query, try using the zip code and radius option. ")
+            st.write("*If the results for a state abbreviation don't match what you would expect, there are some states where the abbrebation does not gather results for the corresponding state from the API (eg. MA, VA, LA, AR). In this case, enter the fill state name.")
+            st.write("*If you get a 'Read timed out' error message, try getting a new API key.")
           
             # Display results if they exist
             if 'results' in locals() and results:

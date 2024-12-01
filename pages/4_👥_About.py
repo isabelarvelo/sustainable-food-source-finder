@@ -96,18 +96,6 @@ def show_about_page():
     """
 )
     
-    
-    # Methodology Section
-    st.header("Methodology")
-    st.write("""
-    Our application combines data from multiple authoritative sources to provide accurate, up-to-date 
-    information about local food sources and seasonal availability. We regularly update our database 
-    to ensure the most current information about local farmers' markets, CSAs, and food sources.
-    
-    The seasonal produce data is compiled from agricultural databases and cross-referenced with 
-    local growing seasons to provide accurate availability information.
-    """)
-    
     # Footer
     st.markdown("---")
     st.markdown("""

@@ -69,7 +69,7 @@ class USDALocalFoodAPI:
     def fetch_listings(self, 
                       directory: str, 
                       location: LocationQuery,
-                      max_retries: int = 3) -> List[Dict[str, Any]]:
+                      max_retries: int = 5) -> List[Dict[str, Any]]:
         """Fetch listings from a specific directory using location parameters."""
         if not location.validate():
             raise ValueError("Invalid location query parameters")
@@ -87,7 +87,7 @@ class USDALocalFoodAPI:
                     url,
                     headers=self.headers,
                     params=params,
-                    timeout=10
+                    timeout=20
                 )
                 
                 if response.status_code == 200:
