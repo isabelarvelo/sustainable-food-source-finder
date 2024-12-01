@@ -26,11 +26,18 @@
 
 ## Replication 
 
-Create a .env file in the root directory of the project and add the following environment variables:
+To replicate this project, you will need to have Docker installed on your machine. You will also need to create an account with the USDA Local Food Directory API and get an API key.
 
 ```
-USDA_API_KEY=Your_API_Key
+git clone https://github.com/isabelarvelo/sustainable-food-source-finder.git
+cd sustainable-food-source-finder
 ```
+
+Create a .env file in the root directory of the project and add the following environment variables:
+
+
+USDA_API_KEY=Your_API_Key
+
 
 Open a terminal in the root directory of the project and run the following commands:
 
