@@ -28,17 +28,23 @@
 Open a terminal in the root directory of the project and run the following commands:
 
 ```
+docker-compose build --no-cache
+```
+
+```
 docker-compose up
 ```
 
 "localhost:8888" will open a jupyer login window in your browser. 
 
 
-The password or token must match whatever is defined in the docker-compose file. For the current configuration, the token is 'your_secret_token'. Open the notebooks folder and run the database_setup.ipynb notebook. This will populate the MongoDB database with the data in the mongo-data folder. At this point, the user can run the Home.py file to open the Streamlit app. Open a new tab in the terminal and run the following command:
+The password or token must match whatever is defined in the docker-compose file. For the current configuration, the token is 'your_secret_token'. Open the notebooks folder and run the database_setup.ipynb notebook. This will populate the MongoDB database with the data in the mongo-data folder (Note that sometimes the API has connection issues. If this occurs, restart your kernel and try to run the cell again.)  At this point, the user can run the Home.py file to open the Streamlit app. Open a new tab in the terminal and run the following command:
 
 ```
 streamlit run Home.py
 ```
+
+This will open the home page of the Streamlit app in your browser.
 
 ## Data Sources 
 * [USDA Local Food Directory](https://www.usdalocalfoodportal.com/)

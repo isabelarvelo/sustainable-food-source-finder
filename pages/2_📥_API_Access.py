@@ -69,9 +69,8 @@ def main():
             
             if query_type == "State Search":
                 state = st.text_input(
-                    "State Abbreviation",
-                    max_chars=2,
-                    help="Enter two-letter state abbreviation (e.g., MI)"
+                    "State",
+                    help="Enter full state name or abbreviation (e.g., 'Tennessee' or 'TN')"
                 ).upper()
                 
                 if st.button("Search") and state:
@@ -131,9 +130,9 @@ def main():
                         )
             
             # Add in italics note about results
-            st.write("*If there are no results for a zip code query, try using the zip code and radius option.")
-            
-
+            st.write("*If there are no results for a zip code query, try using the zip code and radius option. If the results for a state abbreviation don't match what you would expect, there are some states where the abbrebation does not gather results for the corresponding state from the API (eg. MA, VA, LA, AR). In this case, enter the fill state name. ")
+            st.write("* If you get a 'Read timed out' error message, try getting a new API key.")
+          
             # Display results if they exist
             if 'results' in locals() and results:
                 st.success(f"Found {len(results)} results!")

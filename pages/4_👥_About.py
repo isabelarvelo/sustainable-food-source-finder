@@ -6,7 +6,7 @@ def show_about_page():
     st.write("""
     Welcome to Sustainable Food Finder! My name is Isabel Arvelo and I am a foodie that is passionate about sustainable food 
     systems and mindful consumption. I built this application to help you discover local, sustainable food sources 
-    and understand seasonal eating patterns to make more food choices you can make feel good about! 
+    and understand seasonal eating patterns to make more food choices you can feel good about! 
     """)
     
     # Benefits Section
