@@ -5,12 +5,6 @@ from typing import List, Dict
 def create_map(data: List[Dict]):
     """
     Create the interactive map visualization with error handling for empty data.
-    
-    Args:
-        data: List of dictionaries containing food source information
-        
-    Returns:
-        Plotly figure object containing the map
     """
     # First create the locations data with better error handling
     locations = []
