@@ -137,29 +137,3 @@ def query_location_density(collection, state: str) -> Dict[str, Any]:
         "density_per_sq_mile": num_sources / land_area,
         "types": source_types
     }
-
-
-# def query_location_density(collection,
-#                          state: str,
-#                          area_sq_miles: float) -> Dict[str, Any]:
-#     """Calculate the density of food sources in a given state."""
-#     pipeline = [
-#         {'$match': {'location.state': state}},
-#         {'$group': {
-#             '_id': '$location.state',
-#             'total_sources': {'$sum': 1},
-#             'types': {
-#                 '$addToSet': '$directory_type'
-#             }
-#         }},
-#         {'$project': {
-#             'total_sources': 1,
-#             'types': 1,
-#             'density_per_sq_mile': {
-#                 '$divide': ['$total_sources', area_sq_miles]
-#             }
-#         }}
-#     ]
-    
-#     result = list(collection.aggregate(pipeline))
-#     return result[0] if result else None

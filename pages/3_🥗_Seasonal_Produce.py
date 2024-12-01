@@ -50,21 +50,6 @@ if search_type == "Seasons":
             else:
                 query = {"seasons": {"$all": selected_seasons}}
         
-
-
-        # if "year_round" in selected_seasons:
-        #     other_seasons = [s for s in selected_seasons if s != "year_round"]
-        #     if other_seasons:
-        #         query = {
-        #             "$or": [
-        #                 {"available_year_round": True},  # Look for year-round items
-        #                 {"seasons": {"$all": other_seasons}}  # And items from other selected seasons
-        #             ]
-        #         }
-        #     else:
-        #         # If only year_round is selected
-        #         query = {"available_year_round": True}
-        #         query = {"seasons": {"$all": selected_seasons}}
                 
         # Execute query and display results
         results = list(collection.find(query).sort("name"))
