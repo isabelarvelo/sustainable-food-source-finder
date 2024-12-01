@@ -1,11 +1,20 @@
-# Sustainable Food Source Finder
+# Sustainable Food Source Finder 🍃♻️🥗💚🌱
+
+## Overview 
+
+Welcome to Sustainable Food Finder! My name is Isabel Arvelo and I am a foodie that is passionate about sustainable food systems and mindful consumption. I built this application to help you discover local, sustainable food sources and understand seasonal eating patterns to make more food choices you can feel good about! This project aims to connect community members with fresh, local food while supporting the farmers who grow it. Not only does will help people access fresher, minimally processed foods, increasing awareness and accessibility of farmers' markets has the potential to strengthen local economies, reduce food miles, and preserve agricultural diversity. Most of the data will be sourced from the USDA Local Food Directory via their API. The directories used include:
+* Farmers Market Directory: Markets with multiple farm vendors selling directly to consumers.
+* CSA Directory: Farms or farm networks providing weekly deliveries of locally-grown products.
+* On-Farm Market Directory: Markets run by a single farm selling products directly to consumers.
+
 
 ## Structure of Repo
-* .streamlit
-    * secrets.toml: Defines working directory for streamlit
+
 * notebooks/
     * database_setup.ipynb: Contains code for creating the MongoDB databases
 * mongo-data: Contains the data for the MongoDB database. It will not be populated until the user runs the database_setup.ipynb notebook.
+* .streamlit
+   * secrets.toml: Defines working directory for streamlit
 * Home.py: landing page for the app - It contains the title, a brief description of the app, a choro map of the US, and a list of the food sources in Southeast United States. 
 * pages/    
     * 1_📍_Geographic_Queries: Page for users to make queries based on location and products. 
@@ -25,7 +34,7 @@
 
 ## Replication 
 
-To replicate this project, you will need to have Docker installed on your machine. You will also need to create an account with the USDA Local Food Directory API and get an API key.
+To replicate this project, you will need to have Docker and Git installed on your machine. You will also need to create an account with the USDA Local Food Directory API and get an API key.
 
 ```
 git clone https://github.com/isabelarvelo/sustainable-food-source-finder.git
@@ -56,11 +65,8 @@ streamlit run Home.py
 
 This will open the home page of the Streamlit app in your browser.
 
-## Data Sources 
-* [USDA Local Food Directory](https://www.usdalocalfoodportal.com/)
-* [Seasonal Food Guide](https://www.seasonalfoodguide.org/)
-* [Fruits & Veggies](https://fruitsandveggies.org/stories/whats-in-season-all-year/)
-* [Harvard Nutrition Source](https://nutritionsource.hsph.harvard.edu/2015/06/17/5-tips-for-sustainable-eating/)
+## Database Selected 
+I chose MongoDB for this project because it is a NoSQL database that is well-suited for storing JSON-like documents. The data I am working with is in JSON format, so it made sense to use a database that could store the data in its original format. MongoDB can handle varied data structures, such as different types of fresh food sources (e.g., farmers' markets, CSAs, on-farm markets), each of which may have slightly different attributes. MongoDB's schema flexibility will allow me to add new fields as needed without needing major changes to the database structure. There is also built in support for geospatial data.  
 
 
 ## NoSQL DB Query Implementation 
@@ -73,8 +79,12 @@ This will open the home page of the Streamlit app in your browser.
 6. Query produce by season(s)
 7. Query which season a specific product is in
 
-## Database Selected 
-I chose MongoDB for this project because it is a NoSQL database that is well-suited for storing JSON-like documents. The data I am working with is in JSON format, so it made sense to use a database that could store the data in its original format. MongoDB can handle varied data structures, such as different types of fresh food sources (e.g., farmers' markets, CSAs, on-farm markets), each of which may have slightly different attributes. MongoDB's schema flexibility will allow me to add new fields as needed without needing major changes to the database structure. There is also built in support for geospatial data.  
+
+## Data Sources 
+* [USDA Local Food Directory](https://www.usdalocalfoodportal.com/)
+* [Seasonal Food Guide](https://www.seasonalfoodguide.org/)
+* [Fruits & Veggies](https://fruitsandveggies.org/stories/whats-in-season-all-year/)
+* [Harvard Nutrition Source](https://nutritionsource.hsph.harvard.edu/2015/06/17/5-tips-for-sustainable-eating/)
 
 
 ## Gen AI Usage 
@@ -89,7 +99,7 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 
 ## Other Resources Used
 
-* The API was returning error codes, but I was able to resolve them by including headers in the request. I found this solution on the GithHub for [APSC-5984](https://github.com/Niche-Lab/APSC-5984-ADS/tree/main/labs/lab_07) SS: Agriculture Data Science taught at Virginia Tech.
+The API was returning error codes, but I was able to resolve them by including headers in the request. I found this solution on the GithHub for [APSC-5984](https://github.com/Niche-Lab/APSC-5984-ADS/tree/main/labs/lab_07) SS: Agriculture Data Science taught at Virginia Tech.
 
 ## Contact 
 
