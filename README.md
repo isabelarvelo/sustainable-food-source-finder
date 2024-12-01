@@ -3,12 +3,11 @@
 ## Structure of Repo
 * .streamlit
     * secrets.toml: Defines working directory for streamlit
-* mongo-data: Contains the data for the MongoDB database. It is not populated until the user runs the development.ipynb notebook
-* notebooks
-    * development.ipynb: Contains code for creating the MongoDB databases
-* Home.py
-    * landing page for the app - It contains the title, a brief description of the app, a choro map of the US, and a list of the food sources in Southeast United States. 
-* pages    
+* notebooks/
+    * database_setup.ipynb: Contains code for creating the MongoDB databases
+* mongo-data: Contains the data for the MongoDB database. It will not be populated until the user runs the database_setup.ipynb notebook.
+* Home.py: landing page for the app - It contains the title, a brief description of the app, a choro map of the US, and a list of the food sources in Southeast United States. 
+* pages/    
     * 1_📍_Geographic_Queries: Page for users to make queries based on location and products. 
     * 2_📥_API_Access.py: Page where users can query API directly for information across the entire United States
     * 3_🥗_Seasonal_Produce.py: Page to help users identify seasonal foods 
@@ -18,11 +17,11 @@
     * map_utils.py: Utility functions to create the choropleth map
     * mongodb_utils.py: Utility functions to intialize and query the MongoDB database
     * query_utils.py: Utility functions to query the MongoDB database
-* .env: Contains the environment variables. This file is not pushed to GitHub for security reasons.
 * docker-compose.yml: Contains the instructions to build the Docker images, mount the volumes, and run the containers
 * Dockerfile:  Contains the instructions to build the Python Docker image
 * requirements.txt: List of all the packages needed to run the app
 * us-states-by-area.csv: Data that contains the area of each state in the United States
+* .env: Contains the environment variables. This file is not pushed to GitHub for security reasons.
 
 ## Replication 
 
@@ -72,9 +71,11 @@ This will open the home page of the Streamlit app in your browser.
     1. Query by State 
     2. Query by Source Type (e.g., farmers' markets, CSAs, on-farm markets)
     3. Query by Product (e.g., Apples, Broccoli, Eggs)
+
 * 1_📍_Geographic_Queries: 
     4. Query by coordinates and radius 
     5. Query source density for a given state 
+
 * 3_🥗_Seasonal_Produce.py: Page to help users identify seasonal foods 
     6. Query seasonal produce by season 
     7. Query which season a product is in
@@ -97,3 +98,6 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 
 * The API was returning error codes, but I was able to resolve them by including headers in the request. I found this solution on the GithHub for [APSC-5984](https://github.com/Niche-Lab/APSC-5984-ADS/tree/main/labs/lab_07) SS: Agriculture Data Science taught at Virginia Tech.
 
+## Contact 
+
+If you have any questions or feedback, please reach out to me at isabel.c.arvelo@vanderbilt.edu. 
