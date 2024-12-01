@@ -126,9 +126,7 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 }
 ```
 
-Indexes:
-
-location.coordinates: 2dsphere (geospatial queries)
+**Indexes**: location.coordinates: 2dsphere (geospatial queries)
 
 ### us_geography
 * Collection: states_area
@@ -144,9 +142,7 @@ location.coordinates: 2dsphere (geospatial queries)
 }
 ```
 
-Indexes:
-
-state: 1 (ascending)
+**Indexes**: state: 1 (ascending)
 
 ### food_database
 Collection: seasonal_foods
@@ -160,11 +156,10 @@ Tracks seasonal availability of produce items.
 }
 ```
 
-Indexes:
-
-name: 1 (ascending)
-seasons: 1 (ascending)
-available_year_round: 1 (ascending)
+**Indexes**:
+* name: 1 (ascending)
+* seasons: 1 (ascending)
+* available_year_round: 1 (ascending)
 
 Notes
 * All coordinates are stored in GeoJSON format for compatibility with MongoDB's geospatial queries
