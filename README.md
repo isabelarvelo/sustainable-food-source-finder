@@ -73,6 +73,7 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 * Collection: food_sources
    * Stores information about local food sources including farmers markets, CSAs, and on-farm markets.
 
+```
 {
   directory_type: String,    // Type: farmers_market, csa, or onfarmmarket
   listing_id: String,        // Unique identifier
@@ -123,6 +124,8 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
     last_updated: Date
   }
 }
+```
+
 Indexes:
 
 location.coordinates: 2dsphere (geospatial queries)
@@ -130,6 +133,8 @@ location.coordinates: 2dsphere (geospatial queries)
 ### us_geography
 * Collection: states_area
    * Contains geographical information about US states.
+     
+```
 {
   state: String,        // State name
   TotalArea: Number,    // Total area in square miles
@@ -137,6 +142,8 @@ location.coordinates: 2dsphere (geospatial queries)
   WaterArea: Number,    // Water area in square miles
   densityMi: Number     // Population density per square mile
 }
+```
+
 Indexes:
 
 state: 1 (ascending)
@@ -144,11 +151,15 @@ state: 1 (ascending)
 ### food_database
 Collection: seasonal_foods
 Tracks seasonal availability of produce items.
+
+```
 {
   name: String,                 // Name of produce item
   seasons: [String],            // Array of seasons: [spring, summer, fall, winter]
   available_year_round: Boolean // Whether item is available year-round
 }
+```
+
 Indexes:
 
 name: 1 (ascending)
