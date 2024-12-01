@@ -68,6 +68,99 @@ This will open the home page of the Streamlit app in your browser.
 ## Database Selected 
 I chose MongoDB for this project because it is a NoSQL database that is well-suited for storing JSON-like documents. The data I am working with is in JSON format, so it made sense to use a database that could store the data in its original format. MongoDB can handle varied data structures, such as different types of fresh food sources (e.g., farmers' markets, CSAs, on-farm markets), each of which may have slightly different attributes. MongoDB's schema flexibility will allow me to add new fields as needed without needing major changes to the database structure. There is also built in support for geospatial data.  
 
+## Schema
+### sustainable_food_db
+* Collection: food_sources
+   * Stores information about local food sources including farmers markets, CSAs, and on-farm markets.
+
+{
+  directory_type: String,    // Type: farmers_market, csa, or onfarmmarket
+  listing_id: String,        // Unique identifier
+  listing_name: String,      // Name of the location
+  brief_desc: String,        // Description of the location
+  updatetime: Date,          // Last update timestamp
+
+  contact: {
+    name: String,
+    email: String,
+    phone: String
+  },
+
+  media: {
+    website: String,
+    facebook: String,
+    twitter: String,
+    instagram: String
+  },
+
+  location: {
+    address: String,
+    state: String,
+    city: String,
+    street: String,
+    zipcode: String,
+    coordinates: {
+      type: "Point",
+      coordinates: [Number, Number]  // [longitude, latitude]
+    }
+  },
+
+  products: {
+    available_items: [String],
+    seasonal: Boolean
+  },
+
+  schedule: {
+    season_range: {
+      start_month: String,
+      end_month: String
+    }
+  },
+
+  metadata: {
+    last_sync: Date,
+    verified: Boolean,
+    last_updated: Date
+  }
+}
+Indexes:
+
+location.coordinates: 2dsphere (geospatial queries)
+
+### us_geography
+* Collection: states_area
+   * Contains geographical information about US states.
+{
+  state: String,        // State name
+  TotalArea: Number,    // Total area in square miles
+  LandArea: Number,     // Land area in square miles
+  WaterArea: Number,    // Water area in square miles
+  densityMi: Number     // Population density per square mile
+}
+Indexes:
+
+state: 1 (ascending)
+
+### food_database
+Collection: seasonal_foods
+Tracks seasonal availability of produce items.
+{
+  name: String,                 // Name of produce item
+  seasons: [String],            // Array of seasons: [spring, summer, fall, winter]
+  available_year_round: Boolean // Whether item is available year-round
+}
+Indexes:
+
+name: 1 (ascending)
+seasons: 1 (ascending)
+available_year_round: 1 (ascending)
+
+Notes
+* All coordinates are stored in GeoJSON format for compatibility with MongoDB's geospatial queries
+* State names are stored in title case
+* Timestamps are stored in UTC
+
+
 
 ## NoSQL DB Query Implementation 
 
