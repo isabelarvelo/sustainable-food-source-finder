@@ -107,10 +107,8 @@ def get_all_available_products(data):
     return sorted(list(products))
 
 def main():
-    # Title with custom styling
     st.markdown('<h1 class="main-title">Sustainable Food Finder</h1>', unsafe_allow_html=True)
     
-    # Description with custom styling
     st.markdown(
         '<div class="app-description">'
         'We’re here to help you discover sustainable and fresh food sources to support your best self! '
@@ -133,7 +131,7 @@ def main():
                                if item.get('directory_type'))))
     available_products = get_all_available_products(all_data)
     
-    # Sidebar with enhanced styling
+    # Sidebar 
     with st.sidebar:
         st.markdown('<h2 style="color: #2c3e50;">Filters</h2>', unsafe_allow_html=True)
         
@@ -156,16 +154,16 @@ def main():
             key="product_select"
         )
         
-        # Summary section with enhanced styling
+        # Summary section 
         st.markdown('<h3 style="color: #2c3e50; margin-top: 2rem;">Summary</h3>', unsafe_allow_html=True)
         
-    # Apply filters (same as before)
+    # Apply filters 
     filtered_data = filter_data(all_data, selected_state, selected_type, selected_products)
     
-    # Display summary with enhanced styling
+    # Display summary 
     st.sidebar.markdown(f'<div style="font-size: 1.2rem; color: #27ae60;"><strong>{len(filtered_data)}</strong> Sources Found</div>', unsafe_allow_html=True)
     
-    # Create and display map with container styling
+    # Create and display map 
     st.markdown('<div>', unsafe_allow_html=True)
     fig = create_map(filtered_data)
     st.plotly_chart(fig, use_container_width=True)
@@ -180,7 +178,7 @@ def main():
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Display food sources with enhanced styling
+    # Display food sources 
     if filtered_data:
         st.markdown('<h2 class="section-header">Food Source Details</h2>', unsafe_allow_html=True)
         
