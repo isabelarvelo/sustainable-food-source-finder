@@ -3,6 +3,7 @@ from typing import Optional, Tuple, Dict, Any, List
 import requests
 import logging
 import time
+from urllib.parse import urlencode
 
 @dataclass
 class LocationQuery:
@@ -60,11 +61,17 @@ class USDALocalFoodAPI:
             "Referer": "https://www.google.com/"
         }
 
-    def _build_url(self, directory: str) -> str:
-        """Build the API URL for a specific directory."""
+    def _build_url(self, directory: str, params: Dict[str, Any]) -> str:
+        """Build the API URL for a specific directory with API key first."""
         if directory not in self.DIRECTORIES:
             raise ValueError(f"Invalid directory. Must be one of: {', '.join(self.DIRECTORIES.keys())}")
-        return f"{self.BASE_URL}/{self.DIRECTORIES[directory]}/"
+        
+        # Ensure API key is first by creating ordered params
+        ordered_params = {'apikey': self.api_key}
+        ordered_params.update(params)
+        
+        base = f"{self.BASE_URL}/{self.DIRECTORIES[directory]}/"
+        return f"{base}?{urlencode(ordered_params)}"
 
     def fetch_listings(self, 
                       directory: str, 
@@ -75,18 +82,15 @@ class USDALocalFoodAPI:
             raise ValueError("Invalid location query parameters")
 
         params = location.to_params()
-        params['apikey'] = self.api_key
-
-        url = self._build_url(directory)
+        url = self._build_url(directory, params)
         
-        print("params: ", params)
+        print("URL: ", url)
         
         for attempt in range(max_retries):
             try:
                 response = requests.get(
                     url,
                     headers=self.headers,
-                    params=params,
                     timeout=20
                 )
                 
@@ -126,7 +130,6 @@ class USDALocalFoodAPI:
         else:
             query = LocationQuery(zip_code=zip_code)
         return self.fetch_listings(directory, query)
-
         
     def search_by_coordinates(self, 
                             directory: str, 
