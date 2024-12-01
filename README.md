@@ -68,17 +68,13 @@ This will open the home page of the Streamlit app in your browser.
 
 ## NoSQL DB Query Implementation 
 * Home 
-    1. Query by State 
-    2. Query by Source Type (e.g., farmers' markets, CSAs, on-farm markets)
-    3. Query by Product (e.g., Apples, Broccoli, Eggs)
-
-* 1_📍_Geographic_Queries: 
-    4. Query by coordinates and radius 
-    5. Query source density for a given state 
-
-* 3_🥗_Seasonal_Produce.py: Page to help users identify seasonal foods 
-    6. Query seasonal produce by season 
-    7. Query which season a product is in
+    1. Query Food Source by State 
+    2. Query Food Source by Source Type (e.g., farmers' markets, CSAs, on-farm markets)
+    3. Query Food Source by Products Available (e.g., Apples, Broccoli, Eggs)
+    4. Query Food Source by coordinates and radius 
+    5. Query density of Food Sources for a given state 
+    6. Query produce by season(s)
+    7. Query which season a specific product is in
 
 ## Database Selected 
 I chose MongoDB for this project because it is a NoSQL database that is well-suited for storing JSON-like documents. The data I am working with is in JSON format, so it made sense to use a database that could store the data in its original format. MongoDB can handle varied data structures, such as different types of fresh food sources (e.g., farmers' markets, CSAs, on-farm markets), each of which may have slightly different attributes. MongoDB's schema flexibility will allow me to add new fields as needed without needing major changes to the database structure. There is also built in support for geospatial data.  
@@ -100,4 +96,4 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 
 ## Contact 
 
-If you have any questions or feedback, please reach out to me at isabel.c.arvelo@vanderbilt.edu. 
+If you have any questions or feedback, please reach out to me at isabel.c.arvelo@vanderbilt.edu.
