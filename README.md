@@ -85,6 +85,7 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 * [Seasonal Food Guide](https://www.seasonalfoodguide.org/)
 * [Fruits & Veggies](https://fruitsandveggies.org/stories/whats-in-season-all-year/)
 * [Harvard Nutrition Source](https://nutritionsource.hsph.harvard.edu/2015/06/17/5-tips-for-sustainable-eating/)
+* [World Population Review](https://worldpopulationreview.com/state-rankings/states-by-area)
 
 
 ## Gen AI Usage 
