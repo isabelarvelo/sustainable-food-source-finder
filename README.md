@@ -195,7 +195,8 @@ Notes
     * Create the choropleth map and display it successfully in Streamlit.
     * Debug API errors and MongoDB connection issues. 
     * Write documentation strings for functions
-    * Make my code more modular with helper functions 
+    * Make the code more modular with helper functions
+    * Write more extensive and explanatory comments throughout my code
     * Proofread and edit the README file and text in the Streamlit app.
 * I gave GenAI the project requirements outlined in the class slides and the project rubric and asked it to grade me across the specified criteria.
 
