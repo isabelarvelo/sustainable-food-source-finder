@@ -1,3 +1,4 @@
+# Sustainble Food Source Finder
 
 ## Structure of Repo
 * .streamlit
@@ -25,6 +26,12 @@
 
 ## Replication 
 
+Create a .env file in the root directory of the project and add the following environment variables:
+
+```
+USDA_API_KEY=Your_API_Key
+```
+
 Open a terminal in the root directory of the project and run the following commands:
 
 ```
@@ -35,10 +42,10 @@ docker-compose build --no-cache
 docker-compose up
 ```
 
-"localhost:8888" will open a jupyer login window in your browser. 
+Once the containers are running, "localhost:8888" will open a jupyter login window in your browser. 
 
 
-The password or token must match whatever is defined in the docker-compose file. For the current configuration, the token is 'your_secret_token'. Open the notebooks folder and run the database_setup.ipynb notebook. This will populate the MongoDB database with the data in the mongo-data folder (Note that sometimes the API has connection issues. If this occurs, restart your kernel and try to run the cell again.)  At this point, the user can run the Home.py file to open the Streamlit app. Open a new tab in the terminal and run the following command:
+The password or token must match whatever is defined in the docker-compose file. For the current configuration, the token is 'your_secret_token'. Open the notebooks folder and run the database_setup.ipynb notebook. This will populate the MongoDB database with data in the mongo-data folder (Note that sometimes the API has connection issues. If this occurs, restart your kernel and try to run the cell again. If you are still experiencing issues, try getting a new API key.)  At this point, the user can run the Home.py file to open the Streamlit app. Open a new tab in the terminal and run the following command:
 
 ```
 streamlit run Home.py
@@ -53,17 +60,17 @@ This will open the home page of the Streamlit app in your browser.
 * [Harvard Nutrition Source](https://nutritionsource.hsph.harvard.edu/2015/06/17/5-tips-for-sustainable-eating/)
 
 
-## Query Implementation 
-    * Home 
-        * Query by State 
-        * Query by Source Type (e.g., farmers' markets, CSAs, on-farm markets)
-        * Query by Product (e.g., Apples, Broccoli, Eggs)
-    * 1_📍_Geographic_Queries: 
-        * Query by coordinates and radius 
-        * Query source density for a given state 
-    * 3_🥗_Seasonal_Produce.py: Page to help users identify seasonal foods 
-        * Query seasonal produce by season 
-        * Query which season a product is in
+## NoSQL DB Query Implementation 
+* Home 
+    1. Query by State 
+    2. Query by Source Type (e.g., farmers' markets, CSAs, on-farm markets)
+    3. Query by Product (e.g., Apples, Broccoli, Eggs)
+* 1_📍_Geographic_Queries: 
+    4. Query by coordinates and radius 
+    5. Query source density for a given state 
+* 3_🥗_Seasonal_Produce.py: Page to help users identify seasonal foods 
+    6. Query seasonal produce by season 
+    7. Query which season a product is in
 
 ## Database Selected 
 I chose MongoDB for this project because it is a NoSQL database that is well-suited for storing JSON-like documents. The data I am working with is in JSON format, so it made sense to use a database that could store the data in its original format. MongoDB can handle varied data structures, such as different types of fresh food sources (e.g., farmers' markets, CSAs, on-farm markets), each of which may have slightly different attributes. MongoDB's schema flexibility will allow me to add new fields as needed without needing major changes to the database structure. There is also built in support for geospatial data.  
@@ -71,10 +78,12 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 
 ## Gen AI Usage 
 
-* I Used GenAI to help me 
-    * format the Streamlit pages. Much of the CSS code was created by iterating with Claude Sonnet 3.5. 
-    * create the choropleth map and display it successfully in Streamlit.
-
+* I Used GenAI to help me: 
+    * Format the Streamlit pages. The CSS code was created by iterating with Claude Sonnet 3.5. 
+    * Create the choropleth map and display it successfully in Streamlit.
+    * Debug API errors and MongoDB connection issues. 
+    * Write documentation strings for functions 
+    * Proofread and edit the README file and text in the Streamlit app.
 * I gave GenAI the project requirements outlined in the class slides and the project rubric and asked it to grade me across thoe criteria. 
 
 ## Other Resources Used
