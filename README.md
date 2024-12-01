@@ -90,12 +90,14 @@ I chose MongoDB for this project because it is a NoSQL database that is well-sui
 ## Gen AI Usage 
 
 * I Used GenAI to help me: 
+    * Brainstorm the best way to structure the repo
     * Format the Streamlit pages. The CSS code was created by iterating with Claude Sonnet 3.5. 
     * Create the choropleth map and display it successfully in Streamlit.
     * Debug API errors and MongoDB connection issues. 
-    * Write documentation strings for functions 
+    * Write documentation strings for functions
+    * Make my code more modular with helper functions 
     * Proofread and edit the README file and text in the Streamlit app.
-* I gave GenAI the project requirements outlined in the class slides and the project rubric and asked it to grade me across thoe criteria. 
+* I gave GenAI the project requirements outlined in the class slides and the project rubric and asked it to grade me across the specified criteria.
 
 ## Other Resources Used
 
