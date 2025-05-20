@@ -8,6 +8,11 @@ Welcome to Sustainable Food Finder! My name is Isabel Arvelo and I am a foodie t
 * On-Farm Market Directory: Markets run by a single farm selling products directly to consumers.
 
 
+
+https://github.com/user-attachments/assets/ae92d1e9-8c6c-450c-8303-dbd91d738fd4
+
+
+
 ## Structure of Repo
 
 * notebooks/
