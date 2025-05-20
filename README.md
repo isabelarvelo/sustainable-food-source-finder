@@ -1,4 +1,5 @@
 # Sustainable Food Source Finder 🍃♻️🥗💚🌱
+> Fall 2024
 
 ## Overview 
 
